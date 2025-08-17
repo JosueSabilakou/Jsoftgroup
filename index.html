@@ -5,61 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chef Salary - Logiciel de Paie pour le Bénin</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Optionnel: Ajoutez un favicon.ico -->
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>Chef Salary</h1>
-            <p>La solution simple et intuitive pour la gestion de la paie au Bénin.</p>
-        </div>
+        <nav class="container">
+            <a href="#" class="logo">Chef Salary</a>
+            <ul>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#target-audience">Pour Qui ?</a></li>
+                <li><a href="#download">Téléchargement</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section id="hero">
             <div class="container">
-                <h2>Simplifiez votre gestion, restez en conformité.</h2>
-                <p>Générez des fiches de paie précises en quelques clics, gérez vos employés et vos déclarations sans effort.</p>
-                <a href="#download" class="cta-button">Télécharger la version d'essai</a>
+                <div class="hero-content">
+                    <h1>Simplifiez votre paie, restez en conformité.</h1>
+                    <p class="subtitle">Le logiciel de gestion de la paie conçu pour les réalités du Bénin. Précis, sécurisé et incroyablement simple à utiliser.</p>
+                    <a href="#download" class="cta-button">Télécharger la Version d'Essai</a>
+                </div>
             </div>
         </section>
 
-        <section id="features">
+        <section id="features" class="fade-in">
             <div class="container">
-                <h3>Fonctionnalités Clés</h3>
+                <h2>Des fonctionnalités pensées pour vous</h2>
                 <div class="features-grid">
                     <div class="feature-item">
-                        <h4>Gestion des Employés</h4>
-                        <p>Archivez, réintégrez et gérez les informations de votre personnel de manière centralisée.</p>
+                        <div class="icon-placeholder">📄</div>
+                        <h4>Gestion Complète des Employés</h4>
+                        <p>Créez, modifiez, archivez et réintégrez vos employés. Toutes leurs informations sont centralisées et sécurisées.</p>
                     </div>
                     <div class="feature-item">
+                        <div class="icon-placeholder">🎨</div>
                         <h4>Fiches de Paie Personnalisées</h4>
-                        <p>Choisissez parmi plusieurs modèles professionnels pour des bulletins conformes à la législation béninoise.</p>
+                        <p>Choisissez parmi plusieurs modèles professionnels et générez des bulletins conformes à la législation béninoise en quelques clics.</p>
                     </div>
                     <div class="feature-item">
-                        <h4>Sécurité des Données</h4>
-                        <p>Vos données sont chiffrées et sécurisées localement sur votre ordinateur.</p>
+                        <div class="icon-placeholder">🔒</div>
+                        <h4>Sécurité Maximale</h4>
+                        <p>Vos données sensibles sont chiffrées et stockées localement sur votre ordinateur, garantissant une confidentialité totale.</p>
+                    </div>
+                     <div class="feature-item">
+                        <div class="icon-placeholder">📊</div>
+                        <h4>Rapports et Déclarations</h4>
+                        <p>Générez facilement vos états de paiement, livres de paie et rapports de déclarations sociales et fiscales (ITS, CNSS).</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-placeholder">⚙️</div>
+                        <h4>Paramètres Flexibles</h4>
+                        <p>Ajustez vous-même les taux de cotisations et les barèmes d'imposition pour rester à jour avec les évolutions légales.</p>
+                    </div>
+                     <div class="feature-item">
+                        <div class="icon-placeholder">🚀</div>
+                        <h4>Import/Export Facile</h4>
+                        <p>Importez votre liste d'employés depuis un fichier Excel et exportez vos données pour vos archives ou analyses.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="download">
+        <section id="target-audience" class="fade-in">
             <div class="container">
-                <h3>Obtenez Votre Version d'Essai</h3>
+                <h2>À qui s'adresse Chef Salary ?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h4>TPE & PME</h4>
+                        <p>Gagnez un temps précieux et assurez-vous de la conformité de vos paies sans avoir besoin d'être un expert.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Cabinets Comptables</h4>
+                        <p>Gérez le portefeuille de paie de plusieurs clients avec des espaces de travail séparés et sécurisés (version Enterprise).</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Gestionnaires de Ressources Humaines</h4>
+                        <p>Centralisez les informations de vos salariés et suivez facilement les soldes de congés et l'historique des paies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="fade-in">
+            <div class="container">
+                 <h2>Ils nous font confiance</h2>
+                 <div class="testimonial-item">
+                     <blockquote>"Chef Salary a transformé notre processus de paie. Ce qui nous prenait des jours se fait maintenant en quelques heures. Un outil indispensable !"</blockquote>
+                     <cite>– Responsable Administratif, PME à Cotonou</cite>
+                 </div>
+            </div>
+        </section>
+
+
+        <section id="download" class="fade-in">
+            <div class="container">
+                <h2>Obtenez Votre Version d'Essai</h2>
                 <p>Pour télécharger Chef Salary, veuillez remplir ce court formulaire. Le lien de téléchargement vous sera affiché immédiatement après validation.</p>
-                <!-- Intégration du formulaire Google Forms -->
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdakghbbKe-9nWMo96oTvKGGoWRdgU1i43eMNypvnQEAreF7g/viewform?embedded=true" width="640" height="753" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdakghbbKe-9nWMo96oTvKGGoWRdgU1i43eMNypvnQEAreF7g/viewform?embedded=true" width="100%" height="753" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="container">
             <p>&copy; 2025 J Soft Group. Tous droits réservés.</p>
             <p>Contact : jsoftgroup229@gmail.com | +229 01 40 51 03 33</p>
         </div>
     </footer>
+    
+    <button id="scrollTopBtn" title="Retour en haut">↑</button>
 
+    <script src="script.js"></script>
 </body>
 </html>

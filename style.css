@@ -1,101 +1,253 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --text-color: #333;
-    --bg-color: #f4f7f6;
+    --primary-color: #2c3e50; /* Bleu nuit */
+    --secondary-color: #c0392b; /* Bordeaux/Rouge */
+    --accent-color: #e67e22; /* Orange */
+    --text-color: #34495e; /* Gris foncé */
+    --bg-color: #ecf0f1; /* Gris très clair */
+    --white-color: #ffffff;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--bg-color);
     margin: 0;
+    font-size: 16px;
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* --- Header & Navigation --- */
 header {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+    background: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
-main {
-    padding: 40px 0;
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
 }
 
-section {
-    padding: 40px 0;
-    text-align: center;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Section Héro --- */
 #hero {
-    background-color: white;
+    background-image: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(52, 142, 219, 0.8)), url('hero-bg.jpg'); /* Optionnel: ajoutez une image de fond */
+    background-color: var(--primary-color);
+    background-size: cover;
+    color: var(--white-color);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+/* --- Sections Générales --- */
+main section {
+    padding: 60px 0;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-color);
 }
 
-h3 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    border-bottom: 2px solid var(--secondary-color);
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
+/* --- Boutons --- */
 .cta-button {
     display: inline-block;
     background: var(--secondary-color);
-    color: white;
-    padding: 15px 30px;
+    color: var(--white-color);
+    padding: 15px 35px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .cta-button:hover {
-    background: #2980b9;
+    background: #a52a1d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
+/* --- Grille de Fonctionnalités --- */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     text-align: left;
 }
 
 .feature-item {
-    background: white;
-    padding: 25px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#download {
-    background: white;
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-#download iframe {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
+.feature-item .icon-placeholder {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-footer {
-    background: var(--primary-color);
-    color: white;
+.feature-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* --- Section Cible & Témoignages --- */
+#target-audience {
+    background-color: var(--white-color);
+}
+
+#testimonials {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+#testimonials h2 {
+    color: var(--white-color);
+}
+.testimonial-item {
+    max-width: 700px;
+    margin: 0 auto;
     text-align: center;
-    padding: 20px 0;
+}
+.testimonial-item blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    border: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+.testimonial-item cite {
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+/* --- Section Téléchargement --- */
+#download iframe {
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: var(--shadow);
+    max-width: 100%;
+}
+
+/* --- Pied de page --- */
+#footer {
+    background: #1e2b37; /* Plus sombre que le primary */
+    color: var(--bg-color);
+    text-align: center;
+    padding: 40px 20px;
     font-size: 0.9rem;
+}
+
+/* --- Bouton "Retour en haut" --- */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #a52a1d;
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    header nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    header nav ul {
+        margin-top: 10px;
+    }
 }
