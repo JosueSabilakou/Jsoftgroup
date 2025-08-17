@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL, { method: 'POST', body: JSON.stringify({
                 nom: form.nom.value,
                 email: form.email.value,
-                entreprise: form.entreprise.value
+                entreprise: form.entreprise.value,
+                contact: form.contact.value
             })})
             .then(response => response.json())
             .then(data => {
