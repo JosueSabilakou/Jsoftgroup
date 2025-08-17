@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 nom: form.nom.value,
                 email: form.email.value,
                 entreprise: form.entreprise.value,
-                contact: form.contact.value
+                contact: form.contact.value,
+                licence: form.licence.value
             })})
             .then(response => response.json())
             .then(data => {

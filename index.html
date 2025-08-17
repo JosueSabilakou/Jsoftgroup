@@ -94,7 +94,7 @@
             <div class="container">
                  <h2>Ils nous font confiance</h2>
                  <div class="testimonial-item">
-                     <blockquote>"Chef Salary a transformé notre processus de paie. Ce qui nous prenait des jours se fait maintenant en quelques heures. Un outil indispensable !"</blockquote>
+                     <blockquote>"Chef Salary a transformé notre processus de paie. Ce qui nous prenait des jours se fait maintenant en quelques minutes. Un outil indispensable !"</blockquote>
                      <cite>– Responsable Administratif, PME à Cotonou</cite>
                  </div>
             </div>
@@ -102,33 +102,39 @@
 
 
         <section id="download" class="fade-in">
-    <div class="container">
-        <h2>Obtenez Votre Version d'Essai</h2>
-        <p>Remplissez ce court formulaire pour recevoir le lien de téléchargement.</p>
-        
-        <!-- DÉBUT DU NOUVEAU FORMULAIRE -->
-        <form id="download-form" class="download-form">
-            <div class="form-group">
-                <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+            <div class="container">
+                <h2>Obtenez Votre Version d'Essai</h2>
+                <p>Remplissez ce court formulaire pour recevoir le lien de téléchargement.</p>
+                
+                <!-- FORMULAIRE MIS À JOUR -->
+                <form id="download-form" class="download-form">
+                    <div class="form-group">
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise (Optionnel)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="contact" name="contact" placeholder="Votre numéro de téléphone" required>
+                    </div>
+                    <!-- MODIFICATION : Ajout de la liste déroulante -->
+                    <div class="form-group">
+                        <select id="licence" name="licence" required>
+                            <option value="" disabled selected>Choisissez un type de licence...</option>
+                            <option value="Standard">Licence Standard (Pour TPE/PME)</option>
+                            <option value="Pro">Licence Pro (Pour comptables, fonctionnalités avancées)</option>
+                            <option value="Enterprise">Licence Enterprise (Gestion multi-sociétés)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button">Télécharger</button>
+                </form>
+                
+                <div id="form-message" class="form-message" style="display: none;"></div>
             </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
-            </div>
-            <div class="form-group">
-                <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise (Optionnel)">
-            </div>
-            <div class="form-group">
-                <input type="text" id="contact" name="contact" placeholder="Votre numéro de téléphone" requireds>
-            </div>
-            <button type="submit" class="cta-button">Télécharger</button>
-        </form>
-        <!-- FIN DU NOUVEAU FORMULAIRE -->
-
-        <!-- Message de succès/erreur (caché par défaut) -->
-        <div id="form-message" class="form-message" style="display: none;"></div>
-
-    </div>
-</section>
+        </section>
     </main>
 
     <footer id="footer">

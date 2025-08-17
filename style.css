@@ -266,13 +266,24 @@ h2 {
 }
 
 .download-form input[type="text"],
-.download-form input[type="email"] {
+.download-form input[type="email"],
+/* MODIFICATION : Ajout du style pour la liste déroulante */
+.download-form select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
-    box-sizing: border-box; /* Important pour que le padding n'augmente pas la largeur */
+    box-sizing: border-box;
+    /* Apparence unifiée */
+    background-color: white;
+    font-family: inherit;
+    color: var(--text-color);
+}
+
+/* Style pour l'option désactivée */
+.download-form select:invalid {
+    color: #757575;
 }
 
 .download-form .cta-button {
