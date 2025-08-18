@@ -30,6 +30,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // --- DÉBUT DE L'AJOUT : Logique pour le menu Hamburger ---
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            // Affiche ou cache le menu en ajoutant/retirant une classe CSS
+            navMenu.classList.toggle('mobile-menu-open');
+        });
+    }
+
+    // Optionnel mais recommandé : ferme le menu quand on clique sur un lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('mobile-menu-open')) {
+                navMenu.classList.remove('mobile-menu-open');
+            }
+        });
+    });
+
     // --- NOUVEAU : Logique d'envoi du formulaire vers Google Sheets ---
     const form = document.getElementById('download-form');
     const formMessage = document.getElementById('form-message');
@@ -81,4 +102,5 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     }
+   
 });

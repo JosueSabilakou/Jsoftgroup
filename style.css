@@ -237,20 +237,71 @@ h2 {
     transform: translateY(0);
 }
 
-/* --- Responsive --- */
+/* Styles pour le menu Hamburger (caché sur grand écran) */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* --- Responsive : Styles pour les écrans de moins de 768px de large --- */
 @media (max-width: 768px) {
+    /* Cache le menu horizontal */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Hauteur du header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    /* Style pour afficher le menu quand il est ouvert */
+    header nav ul.mobile-menu-open {
+        display: flex;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--bg-color);
+    }
+    
+    header nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Affiche le bouton hamburger */
+    .hamburger-menu {
+        display: block;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    header nav {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 0;
-    }
-    header nav ul {
-        margin-top: 10px;
-    }
 }
+
 /* --- Style pour le nouveau formulaire de téléchargement --- */
 .download-form {
     max-width: 500px;
