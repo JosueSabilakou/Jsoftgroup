@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('download-form');
     const formMessage = document.getElementById('form-message');
     // REMPLACEZ CETTE URL PAR CELLE OBTENUE À L'ÉTAPE 2
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxsg4z9UqMTend6dwJK5iN_-AmdT8vW1f7KCIGZf4VQkuo8h4G9TJ25jg7l3Inf7lbLbg/exec'; 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzAdI2iwfUTV5UT7g1CnV9KrZB4mkkHZaTx1hgGyEpws1ihw2Ek00BCD6PjNs4BOZcOPQ/exec'; 
 
     if (form) {
         form.addEventListener('submit', e => {
@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     form.style.display = 'none';
                     formMessage.style.display = 'block';
                     formMessage.className = 'form-message success';
-                    formMessage.innerHTML = 'Merci ! Votre téléchargement va commencer.<br><a href="https://drive.google.com/file/d/1IwHqD4iB0XMIQiXXL_YqmdLxquPhYN-_/view?usp=drive_link" download>Si ce n\'est pas le cas, cliquez ici.</a>';
-                    window.location.href = "https://drive.google.com/file/d/1IwHqD4iB0XMIQiXXL_YqmdLxquPhYN-_/view?usp=drive_link"; // Mettez votre vrai lien
+                    formMessage.innerHTML = 'Merci ! Votre téléchargement va commencer.<br><a href="https://drive.google.com/file/d/1IwHqD4iB0XMIQiXXL_YqmdLxquPhYN-_/view?usp=sharing" download>Si ce n\'est pas le cas, cliquez ici.</a>';
+                    window.location.href = "https://drive.google.com/file/d/1IwHqD4iB0XMIQiXXL_YqmdLxquPhYN-_/view?usp=sharing"; // Mettez votre vrai lien
                 } else {
                     throw new Error(data.message || 'Une erreur est survenue.');
                 }
