@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('download-form');
     const formMessage = document.getElementById('form-message');
     // REMPLACEZ CETTE URL PAR CELLE OBTENUE À L'ÉTAPE 2
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxk-G9lgB1qJ65YcByioP0lof2YOPEJRlt8xFtZO4tRkIamziCNtt7OT3gJL6PbtWxZFA/exec'; 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxsg4z9UqMTend6dwJK5iN_-AmdT8vW1f7KCIGZf4VQkuo8h4G9TJ25jg7l3Inf7lbLbg/exec'; 
 
     if (form) {
         form.addEventListener('submit', e => {
