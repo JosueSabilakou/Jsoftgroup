@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     form.style.display = 'none';
                     formMessage.style.display = 'block';
                     formMessage.className = 'form-message success';
-                    formMessage.innerHTML = 'Merci ! Votre téléchargement va commencer.<br><a href="VOTRE_LIEN_ICI" download>Si ce n\'est pas le cas, cliquez ici.</a>';
-                    window.location.href = "VOTRE_LIEN_ICI"; // Mettez votre vrai lien
+                    formMessage.innerHTML = 'Merci ! Votre téléchargement va commencer.<br><a href="https://drive.google.com/file/d/1IwHqD4iB0XMIQiXXL_YqmdLxquPhYN-_/view?usp=drive_link" download>Si ce n\'est pas le cas, cliquez ici.</a>';
+                    window.location.href = "https://drive.google.com/file/d/1IwHqD4iB0XMIQiXXL_YqmdLxquPhYN-_/view?usp=drive_link"; // Mettez votre vrai lien
                 } else {
                     throw new Error(data.message || 'Une erreur est survenue.');
                 }
