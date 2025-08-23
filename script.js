@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Optionnel mais recommandé : ferme le menu quand on clique sur un lien
+    // Optionnel mais recommandé : ferme le menu quand on clique sur un lien (sur mobile)
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu.classList.contains('mobile-menu-open')) {
@@ -59,30 +59,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (form) {
         form.addEventListener('submit', e => {
-            e.preventDefault(); // Empêche le rechargement de la page
+            e.preventDefault(); // Empêche le rechargement
             
             const submitButton = form.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
             submitButton.disabled = true;
             submitButton.textContent = 'Envoi en cours...';
 
-            fetch(scriptURL, { method: 'POST', body: JSON.stringify({
+            const formDataObject = {
                 nom: form.nom.value,
                 email: form.email.value,
                 entreprise: form.entreprise.value,
                 contact: form.contact.value,
-                licence: form.licence.value
-            })})
-            .then(response => response.json())
+                licence: form.licence.value // C'est ici qu'on récupère la valeur du <select>
+            };
+
+            // 2. On envoie cet objet, mais transformé en chaîne de caractères JSON.
+            //    C'est ce que `JSON.parse` attend de l'autre côté.
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: JSON.stringify(formDataObject)
+            })
+            // --- FIN DE LA CORRECTION ---
+
+            .then(response => response.json()) // La suite ne change pas
             .then(data => {
                 if (data.result === 'success') {
-                    form.style.display = 'none'; // Cache le formulaire
+                    form.style.display = 'none';
                     formMessage.style.display = 'block';
                     formMessage.className = 'form-message success';
-                    // REMPLACEZ PAR VOTRE VRAI LIEN DE TÉLÉCHARGEMENT
-                    formMessage.innerHTML = 'Merci ! Votre téléchargement va commencer.<br><a href="https://drive.google.com/file/d/1J-fTuptPjrLkOaHuwEnmApgmW5TdQ9MZ/view?usp=sharing" download>Si ce n\'est pas le cas, cliquez ici.</a>';
-                    // Ligne pour déclencher le téléchargement automatiquement
-                    window.location.href = "https://drive.google.com/file/d/1J-fTuptPjrLkOaHuwEnmApgmW5TdQ9MZ/view?usp=sharing";
+                    formMessage.innerHTML = 'Merci ! Votre téléchargement va commencer.<br><a href="VOTRE_LIEN_ICI" download>Si ce n\'est pas le cas, cliquez ici.</a>';
+                    window.location.href = "VOTRE_LIEN_ICI"; // Mettez votre vrai lien
                 } else {
                     throw new Error(data.message || 'Une erreur est survenue.');
                 }
@@ -94,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.error('Error!', error.message);
             })
             .finally(() => {
-                // Réactive le bouton uniquement en cas d'erreur
                 if (form.style.display !== 'none') {
                     submitButton.disabled = false;
                     submitButton.textContent = originalButtonText;
